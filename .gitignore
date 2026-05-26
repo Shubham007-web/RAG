@@ -1,3 +1,6 @@
-.DS_Store
-__pycache__/
+vector_db/
+*.db
+*.sqlite3
 .ipynb_checkpoints/
+__pycache__/
+.env
