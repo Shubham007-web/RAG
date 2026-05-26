@@ -1,0 +1,1988 @@
+
+Topic: LangGraph
+
+Concept: workflow
+
+Explanation:
+workflow is a major capability of LangGraph.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+workflow
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Knowledge Area:
+Ollama
+
+Focus:
+GPU
+
+Notes:
+Modern AI architectures commonly
+combine Ollama
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Beginner
+
+
+
+Document:
+LangChain
+
+Section:
+prompt templates
+
+Summary:
+prompt templates
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Advanced
+
+
+
+Knowledge Area:
+LangGraph
+
+Focus:
+checkpointing
+
+Notes:
+Modern AI architectures commonly
+combine LangGraph
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Beginner
+
+
+
+Knowledge Area:
+Ollama
+
+Focus:
+local inference
+
+Notes:
+Modern AI architectures commonly
+combine Ollama
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Beginner
+
+
+
+Knowledge Area:
+Agentic AI
+
+Focus:
+executor
+
+Notes:
+Modern AI architectures commonly
+combine Agentic AI
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Knowledge Area:
+Agentic AI
+
+Focus:
+planner
+
+Notes:
+Modern AI architectures commonly
+combine Agentic AI
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Beginner
+
+
+
+Knowledge Area:
+Agentic AI
+
+Focus:
+supervisor
+
+Notes:
+Modern AI architectures commonly
+combine Agentic AI
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Knowledge Area:
+LangChain
+
+Focus:
+chains
+
+Notes:
+Modern AI architectures commonly
+combine LangChain
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Beginner
+
+
+
+Topic: Agentic AI
+
+Concept: executor
+
+Explanation:
+executor is a major capability of Agentic AI.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+executor
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Knowledge Area:
+RAG
+
+Focus:
+retrieval
+
+Notes:
+Modern AI architectures commonly
+combine RAG
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Knowledge Area:
+LangChain
+
+Focus:
+retrieval
+
+Notes:
+Modern AI architectures commonly
+combine LangChain
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Knowledge Area:
+RAG
+
+Focus:
+chunking
+
+Notes:
+Modern AI architectures commonly
+combine RAG
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Topic: Agentic AI
+
+Concept: executor
+
+Explanation:
+executor is a major capability of Agentic AI.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+executor
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Knowledge Area:
+Agentic AI
+
+Focus:
+reflection
+
+Notes:
+Modern AI architectures commonly
+combine Agentic AI
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Topic: Ollama
+
+Concept: serving
+
+Explanation:
+serving is a major capability of Ollama.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+serving
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Document:
+Agentic AI
+
+Section:
+critic
+
+Summary:
+critic
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Advanced
+
+
+
+Topic: Agentic AI
+
+Concept: reflection
+
+Explanation:
+reflection is a major capability of Agentic AI.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+reflection
+to increase reliability.
+
+Difficulty:
+Beginner
+
+
+
+Document:
+RAG
+
+Section:
+chunking
+
+Summary:
+chunking
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Advanced
+
+
+
+Document:
+RAG
+
+Section:
+embeddings
+
+Summary:
+embeddings
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Beginner
+
+
+
+Topic: RAG
+
+Concept: context injection
+
+Explanation:
+context injection is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+context injection
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Knowledge Area:
+RAG
+
+Focus:
+retrieval
+
+Notes:
+Modern AI architectures commonly
+combine RAG
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Knowledge Area:
+Ollama
+
+Focus:
+model deployment
+
+Notes:
+Modern AI architectures commonly
+combine Ollama
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Topic: RAG
+
+Concept: chunking
+
+Explanation:
+chunking is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+chunking
+to increase reliability.
+
+Difficulty:
+Beginner
+
+
+
+Document:
+RAG
+
+Section:
+vector search
+
+Summary:
+vector search
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Beginner
+
+
+
+Document:
+Ollama
+
+Section:
+GPU
+
+Summary:
+GPU
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Beginner
+
+
+
+Document:
+LangChain
+
+Section:
+memory
+
+Summary:
+memory
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Document:
+Agentic AI
+
+Section:
+critic
+
+Summary:
+critic
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Document:
+Ollama
+
+Section:
+local inference
+
+Summary:
+local inference
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Advanced
+
+
+
+Document:
+LangGraph
+
+Section:
+routing
+
+Summary:
+routing
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Advanced
+
+
+
+Document:
+LangGraph
+
+Section:
+workflow
+
+Summary:
+workflow
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Knowledge Area:
+Ollama
+
+Focus:
+model deployment
+
+Notes:
+Modern AI architectures commonly
+combine Ollama
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Topic: RAG
+
+Concept: context injection
+
+Explanation:
+context injection is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+context injection
+to increase reliability.
+
+Difficulty:
+Beginner
+
+
+
+Topic: RAG
+
+Concept: vector search
+
+Explanation:
+vector search is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+vector search
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Knowledge Area:
+RAG
+
+Focus:
+vector search
+
+Notes:
+Modern AI architectures commonly
+combine RAG
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Knowledge Area:
+LangGraph
+
+Focus:
+checkpointing
+
+Notes:
+Modern AI architectures commonly
+combine LangGraph
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Topic: RAG
+
+Concept: vector search
+
+Explanation:
+vector search is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+vector search
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Document:
+RAG
+
+Section:
+context injection
+
+Summary:
+context injection
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Topic: RAG
+
+Concept: context injection
+
+Explanation:
+context injection is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+context injection
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Knowledge Area:
+Ollama
+
+Focus:
+serving
+
+Notes:
+Modern AI architectures commonly
+combine Ollama
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Document:
+Ollama
+
+Section:
+quantization
+
+Summary:
+quantization
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Beginner
+
+
+
+Document:
+Agentic AI
+
+Section:
+critic
+
+Summary:
+critic
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Knowledge Area:
+RAG
+
+Focus:
+vector search
+
+Notes:
+Modern AI architectures commonly
+combine RAG
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Topic: LangChain
+
+Concept: prompt templates
+
+Explanation:
+prompt templates is a major capability of LangChain.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+prompt templates
+to increase reliability.
+
+Difficulty:
+Beginner
+
+
+
+Topic: Agentic AI
+
+Concept: executor
+
+Explanation:
+executor is a major capability of Agentic AI.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+executor
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Topic: Agentic AI
+
+Concept: executor
+
+Explanation:
+executor is a major capability of Agentic AI.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+executor
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Document:
+Agentic AI
+
+Section:
+critic
+
+Summary:
+critic
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Advanced
+
+
+
+Knowledge Area:
+Agentic AI
+
+Focus:
+executor
+
+Notes:
+Modern AI architectures commonly
+combine Agentic AI
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Topic: Agentic AI
+
+Concept: supervisor
+
+Explanation:
+supervisor is a major capability of Agentic AI.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+supervisor
+to increase reliability.
+
+Difficulty:
+Beginner
+
+
+
+Knowledge Area:
+LangGraph
+
+Focus:
+state
+
+Notes:
+Modern AI architectures commonly
+combine LangGraph
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Knowledge Area:
+LangGraph
+
+Focus:
+routing
+
+Notes:
+Modern AI architectures commonly
+combine LangGraph
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Beginner
+
+
+
+Topic: Ollama
+
+Concept: local inference
+
+Explanation:
+local inference is a major capability of Ollama.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+local inference
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Document:
+Agentic AI
+
+Section:
+critic
+
+Summary:
+critic
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Knowledge Area:
+Agentic AI
+
+Focus:
+reflection
+
+Notes:
+Modern AI architectures commonly
+combine Agentic AI
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Knowledge Area:
+Ollama
+
+Focus:
+serving
+
+Notes:
+Modern AI architectures commonly
+combine Ollama
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Knowledge Area:
+Agentic AI
+
+Focus:
+planner
+
+Notes:
+Modern AI architectures commonly
+combine Agentic AI
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Document:
+Agentic AI
+
+Section:
+supervisor
+
+Summary:
+supervisor
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Topic: RAG
+
+Concept: context injection
+
+Explanation:
+context injection is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+context injection
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Topic: Ollama
+
+Concept: quantization
+
+Explanation:
+quantization is a major capability of Ollama.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+quantization
+to increase reliability.
+
+Difficulty:
+Beginner
+
+
+
+Knowledge Area:
+Ollama
+
+Focus:
+GPU
+
+Notes:
+Modern AI architectures commonly
+combine Ollama
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Document:
+LangGraph
+
+Section:
+state
+
+Summary:
+state
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Beginner
+
+
+
+Topic: RAG
+
+Concept: embeddings
+
+Explanation:
+embeddings is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+embeddings
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Knowledge Area:
+LangGraph
+
+Focus:
+routing
+
+Notes:
+Modern AI architectures commonly
+combine LangGraph
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Beginner
+
+
+
+Topic: LangGraph
+
+Concept: multi-agent
+
+Explanation:
+multi-agent is a major capability of LangGraph.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+multi-agent
+to increase reliability.
+
+Difficulty:
+Beginner
+
+
+
+Knowledge Area:
+LangGraph
+
+Focus:
+execution
+
+Notes:
+Modern AI architectures commonly
+combine LangGraph
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Beginner
+
+
+
+Knowledge Area:
+LangChain
+
+Focus:
+memory
+
+Notes:
+Modern AI architectures commonly
+combine LangChain
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Topic: RAG
+
+Concept: context injection
+
+Explanation:
+context injection is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+context injection
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Topic: LangGraph
+
+Concept: multi-agent
+
+Explanation:
+multi-agent is a major capability of LangGraph.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+multi-agent
+to increase reliability.
+
+Difficulty:
+Beginner
+
+
+
+Document:
+LangChain
+
+Section:
+prompt templates
+
+Summary:
+prompt templates
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Topic: Agentic AI
+
+Concept: executor
+
+Explanation:
+executor is a major capability of Agentic AI.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+executor
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Topic: LangChain
+
+Concept: memory
+
+Explanation:
+memory is a major capability of LangChain.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+memory
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Knowledge Area:
+Ollama
+
+Focus:
+local inference
+
+Notes:
+Modern AI architectures commonly
+combine Ollama
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Document:
+Ollama
+
+Section:
+serving
+
+Summary:
+serving
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Beginner
+
+
+
+Knowledge Area:
+LangGraph
+
+Focus:
+workflow
+
+Notes:
+Modern AI architectures commonly
+combine LangGraph
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Beginner
+
+
+
+Document:
+Agentic AI
+
+Section:
+executor
+
+Summary:
+executor
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Beginner
+
+
+
+Topic: Ollama
+
+Concept: quantization
+
+Explanation:
+quantization is a major capability of Ollama.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+quantization
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Document:
+Agentic AI
+
+Section:
+critic
+
+Summary:
+critic
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Topic: Agentic AI
+
+Concept: critic
+
+Explanation:
+critic is a major capability of Agentic AI.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+critic
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Topic: Ollama
+
+Concept: GPU
+
+Explanation:
+GPU is a major capability of Ollama.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+GPU
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Topic: LangGraph
+
+Concept: execution
+
+Explanation:
+execution is a major capability of LangGraph.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+execution
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Knowledge Area:
+RAG
+
+Focus:
+context injection
+
+Notes:
+Modern AI architectures commonly
+combine RAG
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Document:
+RAG
+
+Section:
+chunking
+
+Summary:
+chunking
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Advanced
+
+
+
+Topic: Agentic AI
+
+Concept: reflection
+
+Explanation:
+reflection is a major capability of Agentic AI.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+reflection
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Knowledge Area:
+Ollama
+
+Focus:
+quantization
+
+Notes:
+Modern AI architectures commonly
+combine Ollama
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Document:
+Ollama
+
+Section:
+serving
+
+Summary:
+serving
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Document:
+RAG
+
+Section:
+embeddings
+
+Summary:
+embeddings
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Knowledge Area:
+Agentic AI
+
+Focus:
+supervisor
+
+Notes:
+Modern AI architectures commonly
+combine Agentic AI
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Document:
+RAG
+
+Section:
+context injection
+
+Summary:
+context injection
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Advanced
+
+
+
+Document:
+Ollama
+
+Section:
+GPU
+
+Summary:
+GPU
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Beginner
+
+
+
+Knowledge Area:
+Ollama
+
+Focus:
+local inference
+
+Notes:
+Modern AI architectures commonly
+combine Ollama
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Intermediate
+
+
+
+Topic: LangChain
+
+Concept: prompt templates
+
+Explanation:
+prompt templates is a major capability of LangChain.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+prompt templates
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Knowledge Area:
+LangChain
+
+Focus:
+agents
+
+Notes:
+Modern AI architectures commonly
+combine LangChain
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Document:
+LangGraph
+
+Section:
+workflow
+
+Summary:
+workflow
+helps enable adaptive decision making
+inside intelligent systems.
+
+Applications:
+Education
+Healthcare
+Finance
+
+Complexity:
+Intermediate
+
+
+
+Topic: RAG
+
+Concept: vector search
+
+Explanation:
+vector search is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+vector search
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Topic: Agentic AI
+
+Concept: planner
+
+Explanation:
+planner is a major capability of Agentic AI.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+planner
+to increase reliability.
+
+Difficulty:
+Advanced
+
+
+
+Knowledge Area:
+RAG
+
+Focus:
+vector search
+
+Notes:
+Modern AI architectures commonly
+combine RAG
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Knowledge Area:
+RAG
+
+Focus:
+retrieval
+
+Notes:
+Modern AI architectures commonly
+combine RAG
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Advanced
+
+
+
+Topic: LangGraph
+
+Concept: checkpointing
+
+Explanation:
+checkpointing is a major capability of LangGraph.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+checkpointing
+to increase reliability.
+
+Difficulty:
+Beginner
+
+
+
+Topic: RAG
+
+Concept: chunking
+
+Explanation:
+chunking is a major capability of RAG.
+It allows systems to improve reasoning,
+manage context,
+and produce grounded responses.
+
+Example:
+A production AI system can use
+chunking
+to increase reliability.
+
+Difficulty:
+Intermediate
+
+
+
+Knowledge Area:
+LangChain
+
+Focus:
+retrieval
+
+Notes:
+Modern AI architectures commonly
+combine LangChain
+with retrieval and orchestration.
+
+Use Case:
+Build scalable AI systems.
+
+Level:
+Beginner
