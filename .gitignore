@@ -1,9 +1,4 @@
-.DS_Store
-__pycache__/
-.ipynb_checkpoints/
-app.py
-knowledge.txt
-requirements.txt
-test.ipynb
-vector_db/
-README.md
+/*
+!.gitignore
+!RAGChat/
+!RAGChat/**
