@@ -8,6 +8,12 @@ from .config import settings
 from .embeddings import OllamaEmbedder
 from .utils import ensure_dir
 
+try:
+    from sentence_transformers import CrossEncoder
+    HAS_CROSS_ENCODER = True
+except ImportError:
+    HAS_CROSS_ENCODER = False
+
 
 @dataclass
 class RetrievalResult:
@@ -17,6 +23,7 @@ class RetrievalResult:
     bm25_score: float = 0.0
     vector_score: float = 0.0
     combined_score: float = 0.0
+    reranker_score: float = 0.0
 
 
 class BM25Retriever:
@@ -35,6 +42,53 @@ class BM25Retriever:
             reverse=True,
         )[:top_n]
         return [RetrievalResult(chunk_id=i, text=t, metadata=m, bm25_score=float(s)) for i, t, m, s in ranked]
+
+
+class CrossEncoderReranker:
+    """Rerank retrieval results using cross-encoder model."""
+    
+    def __init__(self, model_name: str = settings.reranker_model):
+        if not HAS_CROSS_ENCODER:
+            raise ImportError("sentence-transformers is required for reranking. Install with: pip install sentence-transformers")
+        self.model = CrossEncoder(model_name)
+    
+    def rerank(self, query: str, results: List[RetrievalResult], top_n: Optional[int] = None) -> List[RetrievalResult]:
+        """Rerank results using cross-encoder.
+        
+        Args:
+            query: Query string
+            results: List of RetrievalResult from hybrid search
+            top_n: Optional limit to top N after reranking
+        
+        Returns:
+            Reranked results with reranker_score field populated
+        """
+        if not results:
+            return results
+        
+        # Prepare pairs for cross-encoder: (query, document_text)
+        pairs = [[query, res.text] for res in results]
+        
+        # Get reranker scores (0-1 range)
+        scores = self.model.predict(pairs)
+        
+        # Update results with reranker scores
+        for res, score in zip(results, scores):
+            res.reranker_score = float(score)
+        
+        # Sort by reranker score
+        reranked = sorted(results, key=lambda x: x.reranker_score, reverse=True)
+        
+        # Optionally filter by threshold
+        if hasattr(settings, 'reranker_threshold') and settings.reranker_threshold > 0:
+            reranked = [r for r in reranked if r.reranker_score >= settings.reranker_threshold]
+        
+        # Limit to top_n if specified
+        if top_n:
+            reranked = reranked[:top_n]
+        
+        return reranked
+
 
 
 class ChromaRetriever:
@@ -85,8 +139,16 @@ class HybridRetriever:
         self.chroma = ChromaRetriever(chunks, embedder, persist_dir)
         self.bm25_weight = bm25_weight
         self.vector_weight = vector_weight
+        
+        # Initialize reranker if available
+        self.reranker = None
+        if HAS_CROSS_ENCODER:
+            try:
+                self.reranker = CrossEncoderReranker()
+            except Exception as e:
+                print(f"Warning: Could not initialize reranker: {e}")
 
-    def search(self, query: str, top_n: int = 20) -> List[RetrievalResult]:
+    def search(self, query: str, top_n: int = 20, use_reranker: bool = True) -> List[RetrievalResult]:
         bm25_results = {res.chunk_id: res for res in self.bm25.retrieve(query, top_n=top_n)}
         vector_results = {res.chunk_id: res for res in self.chroma.retrieve(query, top_n=top_n)}
 
@@ -106,4 +168,11 @@ class HybridRetriever:
         for entry in combined.values():
             entry.combined_score = entry.bm25_score * self.bm25_weight + entry.vector_score * self.vector_weight
 
-        return sorted(combined.values(), key=lambda x: x.combined_score, reverse=True)[:top_n]
+        # Sort by combined score first
+        ranked = sorted(combined.values(), key=lambda x: x.combined_score, reverse=True)[:top_n]
+        
+        # Apply reranker if available and requested
+        if use_reranker and self.reranker:
+            ranked = self.reranker.rerank(query, ranked, top_n=settings.reranker_top_k)
+        
+        return ranked

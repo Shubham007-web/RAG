@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import Dict, List, Optional
 
 from .config import settings
@@ -41,6 +41,16 @@ def advanced_router(query: str) -> str:
 
 
 @dataclass
+class FactVerification:
+    """Result of fact verification against sources."""
+    claim: str
+    is_verified: bool
+    confidence: float
+    supporting_sources: List[str] = field(default_factory=list)
+    verification_notes: str = ""
+
+
+@dataclass
 class QAResponse:
     answer: str
     route: str
@@ -48,6 +58,7 @@ class QAResponse:
     retrieved_chunks: List[Dict]
     kg_facts: List[Dict]
     provenance: List[Dict]
+    fact_verifications: List[FactVerification] = field(default_factory=list)
 
 
 class QAPipeline:
@@ -57,6 +68,7 @@ class QAPipeline:
         self.llm = OllamaChatModel(settings.llm_model)
         # Always use NetworkX for local in-memory KG (ignore Neo4j)
         self.kg = KnowledgeGraphBuilder(NetworkXKnowledgeGraph())
+        self.chunks = chunks
 
     def route_query(self, query: str) -> str:
         """Use advanced router for better decision-making."""
@@ -64,6 +76,62 @@ class QAPipeline:
 
     def retrieve(self, query: str, top_k: int = settings.top_k) -> List[RetrievalResult]:
         return self.retriever.search(query, top_n=top_k)
+
+    def verify_facts(self, answer: str, retrieved_chunks: List[RetrievalResult]) -> List[FactVerification]:
+        """Verify answer claims against retrieved source documents.
+        
+        Args:
+            answer: Generated answer text
+            retrieved_chunks: Retrieved context chunks
+        
+        Returns:
+            List of fact verification results
+        """
+        if not settings.enable_fact_verification or not retrieved_chunks:
+            return []
+        
+        verifications: List[FactVerification] = []
+        
+        # Split answer into sentences for verification
+        sentences = [s.strip() for s in answer.split('.') if s.strip()]
+        
+        for sentence in sentences[:5]:  # Verify up to 5 sentences
+            # Check if claim is mentioned in retrieved chunks
+            claim_found = False
+            supporting_sources = []
+            max_similarity = 0.0
+            
+            for chunk in retrieved_chunks[:settings.final_k]:
+                # Simple string-based verification (would be better with semantic matching)
+                chunk_text = chunk.text.lower()
+                sentence_lower = sentence.lower()
+                
+                # Check for keyword overlap
+                claim_words = set(sentence_lower.split())
+                chunk_words = set(chunk_text.split())
+                overlap = len(claim_words & chunk_words) / len(claim_words) if claim_words else 0
+                
+                if overlap > max_similarity:
+                    max_similarity = overlap
+                
+                if overlap > 0.5:  # >50% word overlap = potential match
+                    claim_found = True
+                    supporting_sources.append(chunk.metadata.get('source_file', 'unknown'))
+            
+            # Calculate confidence based on similarity and multiple sources
+            confidence = min(max_similarity, 1.0)
+            if len(set(supporting_sources)) > 1:  # Multiple sources increases confidence
+                confidence = min(confidence + 0.1, 1.0)
+            
+            verifications.append(FactVerification(
+                claim=sentence,
+                is_verified=claim_found and confidence >= settings.fact_verification_threshold,
+                confidence=confidence,
+                supporting_sources=list(set(supporting_sources)),
+                verification_notes=f"Found in {len(set(supporting_sources))} source(s)" if supporting_sources else "No supporting sources found"
+            ))
+        
+        return verifications
 
     def multihop_retrieve(self, query: str, max_hops: int = 2) -> tuple[List[RetrievalResult], List[str]]:
         """Multi-hop retrieval: retrieve → analyze → retrieve again."""
@@ -124,13 +192,22 @@ Question: {query}
 
 Answer:"""
 
-    def answer(self, query: str, route_override: Optional[str] = None) -> QAResponse:
-        route = route_override or self.route_query(query)
+    def answer(self, query: str) -> QAResponse:
+        """Generate answer with automatic routing, fact verification, and grounding.
+        
+        Args:
+            query: User question
+        
+        Returns:
+            QAResponse with answer, routing decision, reasoning chain, and fact verification
+        """
+        # Automatic routing (no need for route parameter)
+        route = self.route_query(query)
         chunks = []
         kg_results = []
         reasoning_chain = []
 
-        # Execute retrieval based on route
+        # Execute retrieval based on auto-detected route
         if route == "multihop":
             chunks, reasoning_chain = self.multihop_retrieve(query)
         elif route in {"vector", "hybrid"}:
@@ -141,7 +218,10 @@ Answer:"""
 
         # Generate answer
         prompt = self.generate_prompt(query, chunks, kg_results if kg_results else None)
-        answer_text = self.llm.generate(prompt, context=[])  # Fixed: no duplicate context
+        answer_text = self.llm.generate(prompt, context=[], trace_name=f"qa_{route}")
+
+        # Verify facts if enabled
+        fact_verifications = self.verify_facts(answer_text, chunks)
 
         # Build provenance
         provenance = []
@@ -161,4 +241,5 @@ Answer:"""
             retrieved_chunks=[result.__dict__ for result in chunks[: settings.final_k]],
             kg_facts=kg_results,
             provenance=provenance,
+            fact_verifications=fact_verifications,
         )

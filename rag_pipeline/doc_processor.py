@@ -1,7 +1,7 @@
 import json
 from dataclasses import dataclass, asdict
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Set
 
 import pandas as pd
 from pypdf import PdfReader
@@ -9,6 +9,54 @@ from pypdf import PdfReader
 from .chunking import RecursiveCharacterTextSplitter
 from .config import settings
 from .utils import ensure_dir, file_hash, normalize_text, now_iso
+
+
+class FileHashManifest:
+    """Tracks file hashes for incremental indexing."""
+    
+    def __init__(self, manifest_path: Path = settings.manifest_path):
+        self.manifest_path = Path(manifest_path)
+        self.manifest: Dict[str, str] = {}
+        self.load()
+    
+    def load(self):
+        """Load manifest from disk."""
+        if self.manifest_path.exists():
+            try:
+                self.manifest = json.loads(self.manifest_path.read_text())
+            except Exception:
+                self.manifest = {}
+        else:
+            self.manifest = {}
+    
+    def save(self):
+        """Save manifest to disk."""
+        ensure_dir(self.manifest_path.parent)
+        self.manifest_path.write_text(json.dumps(self.manifest, indent=2))
+    
+    def get_hash(self, file_path: Path) -> Optional[str]:
+        """Get stored hash for a file."""
+        return self.manifest.get(str(file_path.absolute()))
+    
+    def update_hash(self, file_path: Path, hash_value: str):
+        """Update hash for a file."""
+        self.manifest[str(file_path.absolute())] = hash_value
+    
+    def needs_processing(self, file_path: Path) -> bool:
+        """Check if file is new or has been modified."""
+        current_hash = file_hash(file_path)
+        stored_hash = self.get_hash(file_path)
+        if stored_hash is None or stored_hash != current_hash:
+            self.update_hash(file_path, current_hash)
+            return True
+        return False
+    
+    def remove(self, file_path: Path):
+        """Remove a file from manifest."""
+        key = str(file_path.absolute())
+        if key in self.manifest:
+            del self.manifest[key]
+            self.save()
 
 
 @dataclass
@@ -31,8 +79,10 @@ class Chunk:
 
 
 class DocumentProcessor:
-    def __init__(self, data_dir: Path = settings.data_dir):
+    def __init__(self, data_dir: Path = settings.data_dir, incremental: bool = True):
         self.data_dir = Path(data_dir)
+        self.incremental = incremental
+        self.manifest = FileHashManifest() if incremental else None
         self.splitter = RecursiveCharacterTextSplitter(
             chunk_size=settings.chunk_size,
             chunk_overlap=settings.chunk_overlap,
@@ -102,17 +152,42 @@ class DocumentProcessor:
             },
         )]
 
-    def process_all(self) -> List[Chunk]:
+    def process_all(self, incremental: bool = True) -> tuple[List[Chunk], Dict[str, int]]:
+        """Process all documents in data_dir.
+        
+        Returns:
+            Tuple of (all_chunks, processing_stats)
+            - all_chunks: List of chunks
+            - processing_stats: {total_files, processed_files, skipped_files, total_chunks}
+        """
         ensure_dir(self.data_dir)
         all_chunks: List[Chunk] = []
+        stats = {"total_files": 0, "processed_files": 0, "skipped_files": 0, "total_chunks": 0}
+        
         for file_path in sorted(self.data_dir.glob("**/*")):
             if file_path.is_dir():
                 continue
+            
+            stats["total_files"] += 1
+            
+            # Check if we should process this file
+            if incremental and self.manifest and not self.manifest.needs_processing(file_path):
+                stats["skipped_files"] += 1
+                continue
+            
+            stats["processed_files"] += 1
             docs = self.extract_text(file_path)
             for document in docs:
                 chunks = self.chunk_document(document)
                 all_chunks.extend(chunks)
-        return all_chunks
+        
+        stats["total_chunks"] = len(all_chunks)
+        
+        # Save manifest
+        if incremental and self.manifest:
+            self.manifest.save()
+        
+        return all_chunks, stats
 
     def chunk_document(self, document: Document) -> List[Chunk]:
         chunk_texts = self.splitter.split_text(document.text)

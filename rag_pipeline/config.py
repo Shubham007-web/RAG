@@ -24,6 +24,7 @@ class Settings:
     data_dir: Path = default_path(os.getenv("DATA_DIR", "data"))
     vector_db_dir: Path = default_path(os.getenv("VECTOR_DB_DIR", "vector_db"))
     kg_json_path: Path = default_path(os.getenv("KG_JSON_PATH", "kg_store.json"))
+    manifest_path: Path = default_path(os.getenv("MANIFEST_PATH", ".file_manifest.json"))
     chunk_size: int = env_int("CHUNK_SIZE", 1000)
     chunk_overlap: int = env_int("CHUNK_OVERLAP", 200)
     text_splitter_mode: str = env_str("TEXT_SPLITTER_MODE", "recursive")
@@ -38,6 +39,12 @@ class Settings:
     bm25_weight: float = env_float("BM25_WEIGHT", 0.5)
     vector_weight: float = env_float("VECTOR_WEIGHT", 0.5)
     reranker_top_k: int = env_int("RERANKER_TOP_K", 5)
+    reranker_threshold: float = env_float("RERANKER_THRESHOLD", 0.1)
+    enable_fact_verification: bool = env_str("ENABLE_FACT_VERIFICATION", "true").lower() == "true"
+    fact_verification_threshold: float = env_float("FACT_VERIFICATION_THRESHOLD", 0.6)
+    langsmith_api_key: str = env_str("LANGSMITH_API_KEY", "")
+    langsmith_project: str = env_str("LANGSMITH_PROJECT", "rag-chatbot")
+    enable_langsmith: bool = env_str("ENABLE_LANGSMITH", "false").lower() == "true"
     log_level: str = env_str("LOG_LEVEL", "INFO")
 
 
